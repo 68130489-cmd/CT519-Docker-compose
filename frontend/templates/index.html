@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Machine Learning Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Auttapon Puangthipwan</h1>
+
+    <h2>68130489</h2>
+
+    <img src="{{ url_for('static', filename='6.png') }}"
+         width="350">
+
+    <h2>Machine Learning Prediction</h2>
+
+    <form method="POST">
+
+        <label>กรอกตัวเลขเพื่อทำนาย</label>
+
+        <br><br>
+
+        <input type="number"
+               step="any"
+               name="value"
+               required>
+
+        <button type="submit">
+            Predict
+        </button>
+
+    </form>
+
+    {% if result %}
+
+    <div class="result">
+
+        <h3>Prediction Result</h3>
+
+        <p><b>Input :</b> {{ result.input }}</p>
+
+        <p><b>Prediction :</b> {{ result.prediction }}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
